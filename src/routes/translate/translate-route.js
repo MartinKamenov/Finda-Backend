@@ -3,14 +3,18 @@ const controller = require('./translate-controller');
 
 const attach = (app) => {
     const router = new Router();
-    router.post('/', async (req, res) => {
+    router
+    .get('/', (req, res) => {
+        res.send('works');
+    })
+    .post('/', async (req, res) => {
         const body = req.body;
-        if(!body.to) {
-            res.send('No "to" param');
+        if(!body.from || !body.to) {
+            res.send('No "from" or "to" param');
         }
 
-        const translateBody = controller.parseParams(body);
-        const result = await controller.translate(translateBody);
+        const parsedBody = controller.parseParams(body);
+        const result = await controller.translate(parsedBody);
 
         res.send(result);
     });
