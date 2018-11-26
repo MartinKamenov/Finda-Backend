@@ -7,16 +7,14 @@ const attach = (app) => {
     .get('/', (req, res) => {
         res.send('works');
     })
-    .post('/', async (req, res) => {
+    .post('/', (req, res) => {
         const body = req.body;
         if(!body.from || !body.to) {
             res.send('No "from" or "to" param');
         }
 
         const parsedBody = controller.parseParams(body);
-        const result = await controller.translate(parsedBody);
-
-        res.send(result);
+        controller.translate(parsedBody, res);
     });
 
     app.use('/translate', router);

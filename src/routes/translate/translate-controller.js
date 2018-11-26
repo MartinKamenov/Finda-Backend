@@ -10,9 +10,14 @@ const controller = {
         
         return translateBody;
     },
-    translate: async(body) => {
-        const res = await translate(body.text, { from: body.from, to: body.to });
-        return res.text;
+    translate: (body, res) => {
+        translate(body.text, { from: body.from, to: body.to }).then((result) => {
+            res.send(result.text);
+            return;
+        }).catch(er => {
+            res.send(er);
+            return;
+        });
     }
 };
 
