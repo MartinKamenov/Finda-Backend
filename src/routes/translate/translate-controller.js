@@ -11,8 +11,8 @@ const controller = {
         return translateBody;
     },
     translate: async(body) => {
-        const res = await translate(body.text, {from: body.from, to: body.to});
-        return res;
+        const res = await translate(body.text, { from: body.from, to: body.to });
+        return res.text;
     }
 };
 
