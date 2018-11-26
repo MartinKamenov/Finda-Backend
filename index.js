@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const translateRoute = require('./src/routes/translate/translate-route');
+
+app.use(bodyParser.json());
 
 translateRoute(app);
 

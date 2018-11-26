@@ -4,13 +4,14 @@ const controller = {
     parseParams: (body) => {
         const translateBody = {
             from: body.from,
-            to: body.to
+            to: body.to,
+            text: body.text
         };
         
         return translateBody;
     },
     translate: async(body) => {
-        const res = await translate('I spea Dutch!', {from: 'en', to: 'nl'});
+        const res = await translate(body.text, {from: body.from, to: body.to});
         return res;
     }
 };
