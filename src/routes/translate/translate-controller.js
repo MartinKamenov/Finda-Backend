@@ -5,7 +5,7 @@ const controller = {
         const translateBody = {
             from: body.from,
             to: body.to,
-            text: body.text
+            text: body.txt
         };
         
         return translateBody;
