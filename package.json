@@ -1,0 +1,23 @@
+{
+  "name": "finda-backend",
+  "version": "1.0.0",
+  "description": "Backend for FindA application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinKamenov/Finda-Backend.git"
+  },
+  "author": "Martin Kamenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinKamenov/Finda-Backend/issues"
+  },
+  "homepage": "https://github.com/MartinKamenov/Finda-Backend#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
