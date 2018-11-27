@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const translateRoute = require('./src/routes/translate/translate-route');
 
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 translateRoute(app);
 
 const port = process.env.PORT || 5000;

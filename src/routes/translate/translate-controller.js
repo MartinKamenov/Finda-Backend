@@ -11,7 +11,10 @@ const controller = {
         return translateBody;
     },
     translate: (body, res) => {
-        translate(body.text, { from: body.from, to: body.to }).then((result) => {
+        const from = body.from;
+        const to = body.to;
+        const translationText = body.text;
+        translate(translationText, { from, to }).then((result) => {
             res.send(result.text);
             return;
         }).catch(er => {

@@ -4,13 +4,11 @@ const controller = require('./translate-controller');
 const attach = (app) => {
     const router = new Router();
     router
-    .get('/', (req, res) => {
-        res.send('works');
-    })
     .post('/', (req, res) => {
         const body = req.body;
         if(!body.from || !body.to) {
             res.send('No "from" or "to" param');
+            return;
         }
 
         const parsedBody = controller.parseParams(body);
