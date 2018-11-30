@@ -20,6 +20,6 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "google-translate-api": "github:vitalets/google-translate-api"
+    "google-translate-api": "github:MartinKamenov/google-translate-api"
   }
 }
